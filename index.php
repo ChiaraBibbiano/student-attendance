@@ -1,4 +1,9 @@
 <?php
+require 'vendor/autoload.php';
+
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__); //charge les info qui sont dans le fichier
+$dotenv->load();
 
 include 'db/queries.php';
 
