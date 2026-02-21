@@ -1,6 +1,6 @@
 <?php
 $host = '127.0.0.1';
-$db_name = 'school_hepl';
+$db_name = 'students';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4'; 
