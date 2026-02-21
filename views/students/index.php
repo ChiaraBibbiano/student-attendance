@@ -1,4 +1,4 @@
-<?php include 'views/partials/head.php' ?>
+<?php include VIEWS_PATH . '/partials/head.php' ?>
 
 <?php global $title ?>
 <main class="page-main">
@@ -21,7 +21,7 @@
 </main>
 
 
-<?php include 'views/partials/nav.php' ?>
+<?php include VIEWS_PATH . '/partials/nav.php' ?>
 
 
-<?php include 'views/partials/footer.php' ?>
+<?php include VIEWS_PATH . '/partials/footer.php' ?>
