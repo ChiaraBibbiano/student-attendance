@@ -1,0 +1,14 @@
+{
+    "name": "chiarabibbiano/student-attendance",
+    "description": "a small app for managing the attendances of students",
+    "type": "project",
+    "require": {
+        "php": "^8.4"
+    },
+    "authors": [
+        {
+            "name": "ChiaraBibbiano",
+            "email": "chiara.bibbiano@student.hepl.be"
+        }
+    ]
+}
