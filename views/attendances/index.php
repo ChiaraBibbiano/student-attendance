@@ -4,7 +4,7 @@
     <h1><?php echo $title ?></h1>
     <form action="" method="POST">
         <ol class="student-list">
-            <?php foreach (getAllStudents() as $student): ?>
+            <?php foreach ($students as $student): ?>
                 <li>
                     <input id="<?php echo $student['id'] ?>" type="checkbox" name="students[]"
                            value="<?php echo $student['id'] ?>">

@@ -8,7 +8,7 @@ require VENDOR_PATH . '/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(ROOT_PATH); //charge les info qui sont dans le fichier
 $dotenv->load();
 
-include DB_PATH . '/queries.php';
+
 
 
 switch ($_SERVER['REQUEST_URI']) {
