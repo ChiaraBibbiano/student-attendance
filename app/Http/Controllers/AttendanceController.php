@@ -1,8 +1,15 @@
 <?php
-function index() : void
+
+namespace App\Http\Controllers;
+
+use App\Models\Student;
+
+class AttendanceController
 {
-    require MODELS_PATH . '/Student.php';
-    $title = 'Prendre les présences';
-    $students = getAllStudents();
-    include VIEWS_PATH . '/attendances/index.php';
+    static function index(): void
+    {
+        $title = 'Prendre les présences';
+        $students = Student::getAllStudents();
+
+    }
 }
