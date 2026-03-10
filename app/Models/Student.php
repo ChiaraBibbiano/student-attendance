@@ -1,6 +1,4 @@
 <?php
-include 'connexion.php';
-
 function getAllStudents(): ?array
 {
     try {
@@ -17,9 +15,7 @@ function getAllStudents(): ?array
 function getAllStudentWhereFirstNameContainsA(): ?array
 {
     try {
-        global $pdo;
-
-        return $pdo->query("SELECT count(*)
+        return db_connection()->query("SELECT count(*)
                                  FROM students")->fetch();
 
     } catch (PDOException $e) {
@@ -32,9 +28,7 @@ function getAllStudentWhereFirstNameContainsA(): ?array
 function getStudent()
 {
     try {
-        global $pdo;
-
-        return $pdo->query("SELECT *
+        return db_connection()->query("SELECT *
 FROM students WHERE first_name LIKE '%a%'")->fetch();
 
     } catch (PDOException $e) {

@@ -7,7 +7,7 @@
 
     <?php if (count($students) > 0): ?>
         <ol>
-            <?php foreach (getAllStudents() as $student): ?>
+            <?php foreach ($students as $student): ?>
                 <li>
                     <?php echo $student['first_name'] ?>
                     &nbsp;<?php echo $student['last_name'] ?>
