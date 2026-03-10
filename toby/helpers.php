@@ -50,3 +50,17 @@ if (!function_exists('db_connection')) {
     }
 }
 
+if (!function_exists('view')) {
+    function view(string $name, array $data = []): void
+    {
+        $name = str_replace('.', '/', $name);
+        $view = VIEWS_PATH . '/' . $name . '.php';
+        if (file_exists($view)) {
+            extract($data);
+            include $view;
+        }else{
+            die('La vue n’existe pas');
+        }
+
+    }
+}
