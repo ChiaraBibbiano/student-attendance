@@ -10,6 +10,9 @@ class StudentController
     {
         $title = 'Tous les étudiants';
         $students = Student::getAllStudents();
-        
+        view(
+            'students.index',
+            compact('title', 'students')
+        );
     }
 }

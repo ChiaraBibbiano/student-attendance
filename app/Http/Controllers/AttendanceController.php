@@ -10,6 +10,9 @@ class AttendanceController
     {
         $title = 'Prendre les présences';
         $students = Student::getAllStudents();
-
+        view(
+            'attendances.index',
+            compact('title', 'students')
+        );
     }
 }
