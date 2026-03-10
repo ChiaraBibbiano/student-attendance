@@ -1,15 +1,11 @@
 <?php
 
-const PUBLIC_PATH = __DIR__;
-const APP_PATH = PUBLIC_PATH . '/..';
-const DB_PATH = APP_PATH . '/db';
-const VENDOR_PATH = APP_PATH . '/vendor';
-const VIEWS_PATH = APP_PATH . '/views';
+require __DIR__ . '/../boodstrap/app.php';
 
 require VENDOR_PATH . '/autoload.php';
 
 
-$dotenv = Dotenv\Dotenv::createImmutable(APP_PATH); //charge les info qui sont dans le fichier
+$dotenv = Dotenv\Dotenv::createImmutable(ROOT_PATH); //charge les info qui sont dans le fichier
 $dotenv->load();
 
 include DB_PATH . '/queries.php';
