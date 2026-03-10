@@ -1,7 +1,15 @@
 <?php
-function index() : void
+
+namespace App\Http\Controllers;
+
+use App\Models\Student;
+
+class StudentController
 {
-    $title = 'Tous les étudiants';
-    $students = getAllStudents();
-    include VIEWS_PATH . '/students/index.php';
+    static function index(): void
+    {
+        $title = 'Tous les étudiants';
+        $students = Student::getAllStudents();
+        
+    }
 }

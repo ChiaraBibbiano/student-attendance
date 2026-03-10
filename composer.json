@@ -7,6 +7,14 @@
         "vlucas/phpdotenv": "^5.6",
         "ext-pdo": "*"
     },
+  "autoload": {
+    "files": [
+      "toby/helpers.php"
+    ],
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
     "authors": [
         {
             "name": "ChiaraBibbiano",
