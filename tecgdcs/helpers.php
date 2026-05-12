@@ -64,3 +64,14 @@ if (!function_exists('view')) {
 
     }
 }
+
+if (!function_exists('csrf_token')) {
+    function csrf_token(int $length = 32): string
+    {
+        if (!isset($_SESSION['token'])) {
+            $_SESSION['token'] = bin2hex(random_bytes($length));
+        }
+
+        return $_SESSION['token'];
+    }
+}
