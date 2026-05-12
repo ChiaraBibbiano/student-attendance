@@ -7,17 +7,19 @@ require VENDOR_PATH . '/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(ROOT_PATH);
 $dotenv->load();
 
-
 switch ($_SERVER['REQUEST_URI']) {
     case '':
     case '/':
-        \App\Http\Controllers\PageController::home();
+        new \App\Http\Controllers\PageController()->home();
         break;
     case '/presences':
-        \App\Http\Controllers\AttendanceController::index();
+       new \App\Http\Controllers\AttendanceController()->index();
         break;
     case '/etudiants':
-        \App\Http\Controllers\StudentController::index();
+       new \App\Http\Controllers\StudentController()->index();
+        break;
+    case '/etudiants/create':
+        new \App\Http\Controllers\StudentController()->create();
         break;
     default:
         $title = '404';

@@ -1,4 +1,4 @@
-<?php include VIEWS_PATH . '/partials/head.php' ?>
+<?php view('partials.head', compact('title')) ?>
     <main class="page-main">
         <h1><?= $title ?></h1>
         <form action="" method="POST">
@@ -20,8 +20,8 @@
     </main>
 
 
-<?php include VIEWS_PATH . '/partials/nav.php' ?>
+<?php view('partials.nav') ?>
 
     <script defer src="/assets/js/main.js"></script>
 
-<?php include VIEWS_PATH . '/partials/footer.php' ?>
+<?php view('partials.footer') ?>
