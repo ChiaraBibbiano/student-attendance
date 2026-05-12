@@ -9,7 +9,7 @@
     },
   "autoload": {
     "files": [
-      "toby/helpers.php"
+      "tecgdcs/helpers.php"
     ],
     "psr-4": {
       "App\\": "app/"
