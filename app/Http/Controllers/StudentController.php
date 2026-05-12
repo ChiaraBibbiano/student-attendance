@@ -6,6 +6,27 @@ use App\Models\Student;
 
 class StudentController
 {
+    private function check_id(): ?int
+    {
+        // Validation
+        if (!isset($_REQUEST['id']) || !is_numeric($_REQUEST['id'])) {
+            Response::abort(Response::BAD_REQUEST);
+        }
+
+        // Sanitisation | Nettoyage | Préparation
+        return (int)$_REQUEST['id'];
+    }
+    private function check_csrf(): void
+    {
+
+        if (!isset($_REQUEST['_token'], $_SESSION['token'])) {
+            Response::abort(Response::BAD_REQUEST);
+        }
+
+        if ($_REQUEST['_token'] !== $_SESSION['token']) {
+            Response::abort(Response::UNAUTHORIZED);
+        };
+    }
     public function index(): void
     {
         $title = 'Tous les étudiants';
@@ -48,11 +69,11 @@ class StudentController
     public function show()
     {
         // Validation
-        if(!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+        if(!isset($_REQUEST['id']) || !is_numeric($_REQUEST['id'])) {
             die('Bad Request');
         }
         // Sanitisation / Nettoyage | Préparation
-        $id = (int)$_GET['id'];
+        $id = (int)$_REQUEST['id'];
 
 
         //récup les données
@@ -66,6 +87,39 @@ class StudentController
                 'student'
             )
         );
+    }
+    public function update(): void
+    {
+        $this->check_csrf();
+
+        // Validation des données qui bloque si les données sont invalides
+
+        $id = $this->check_id();
+
+        $student = Student::find($id);
+
+        $student->first_name = $_POST['first_name'];
+        $student->last_name = $_POST['last_name'];
+        $student->email = $_POST['email'];
+        $student->matricule = $_POST['matricule'];
+        $student->birth_date = empty($_POST['birth_date']) ? null : $_POST['birth_date'];
+
+        $student->save();
+
+
+        Response::redirect('Location: /etudiant?id=' . $student->id);
+
+    }
+
+    public function destroy(): void
+    {
+        $this->check_csrf();
+
+        $id = $this->check_id();
+
+        Student::destroy($id);
+
+        Response::redirect('Location: /etudiants');
     }
 
 
