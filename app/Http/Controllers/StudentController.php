@@ -24,4 +24,9 @@ class StudentController
             compact('title')
         );
     }
+    public function store(): void
+    {
+        //stocker un étudiant dans la db
+        //demander au navigateur de se rediger vers la page de résultat souhaitée
+    }
 }
