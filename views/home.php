@@ -1,11 +1,11 @@
-<?php include_once VIEWS_PATH .'/partials/head.php' ?>
+<?php view('partials.head', compact('title')) ?>
 
 <main class="page-main">
     <h1><?= $title ?></h1>
 </main>
 
 
-<?php include_once  VIEWS_PATH .'/partials/nav.php' ?>
+<?php view('partials.nav') ?>
 
 
-<?php include_once VIEWS_PATH .'/partials/footer.php' ?>
+<?php view('partials.footer') ?>

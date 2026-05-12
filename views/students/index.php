@@ -1,25 +1,27 @@
-<?php include VIEWS_PATH . '/partials/head.php' ?>
-
+<?php view('partials.head', compact('title')) ?>
     <main class="page-main">
-        <h1><?php echo $title ?></h1>
+        <h1><?= $title ?></h1>
 
         <?php if (count($students) > 0): ?>
             <ol>
                 <?php foreach ($students as $student): ?>
                     <li>
-                        <?php echo $student['first_name'] ?>
-                        &nbsp;<?php echo $student['last_name'] ?>
+                        <?= $student['first_name'] ?>
+                        &nbsp;<?= $student['last_name'] ?>
                     </li>
                 <?php endforeach; ?>
             </ol>
         <?php else: ?>
             <p>Mais où sont-ils&nbsp;?</p>
         <?php endif; ?>
+        <div>
+            <a href="/etudiants/create" class="action">Ajouter un étudiant</a>
+        </div>
 
     </main>
 
 
-<?php include VIEWS_PATH . '/partials/nav.php' ?>
+<?php view('partials.nav') ?>
 
 
-<?php include VIEWS_PATH . '/partials/footer.php' ?>
+<?php view('partials.footer') ?>
