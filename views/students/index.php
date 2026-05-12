@@ -6,8 +6,9 @@
             <ol>
                 <?php foreach ($students as $student): ?>
                     <li>
-                        <?= $student['first_name'] ?>
-                        &nbsp;<?= $student['last_name'] ?>
+                        <a href="/etudiant?id=<?= $student->id ?>"> <!--Il génère un lien vers la fiche d'un étudiant en passant son id dans l'URL :-->
+                        <?= $student->first_name ?>
+                        &nbsp;<?= $student->last_name ?>
                     </li>
                 <?php endforeach; ?>
             </ol>

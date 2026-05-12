@@ -5,10 +5,10 @@
             <ol class="student-list">
                 <?php foreach ($students as $student): ?>
                     <li>
-                        <input id="<?= $student['id'] ?>" type="checkbox" name="students[]"
-                               value="<?= $student['id'] ?>">
-                        <label for="<?= $student['id'] ?>"><?= $student['first_name'] ?>
-                            &nbsp;<?= $student['last_name'] ?></label>
+                        <input id="<?= $student->id ?>" type="checkbox" name="students[]"
+                               value="<?= $student->id ?>">
+                        <label for="<?= $student->id ?>"><?= $student->first_name ?>
+                            &nbsp;<?= $student->last_name ?></label>
                     </li>
                 <?php endforeach; ?>
             </ol>

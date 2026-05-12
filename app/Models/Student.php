@@ -13,6 +13,29 @@ class Student
         return null;
     }
 
+
+
+    public static function find(int $id)
+    {
+        $sql = <<<SQL
+            SELECT *
+            FROM students
+            WHERE id = :id
+SQL;
+
+
+        try {
+            $pdo = db_connection();
+            $stmt = $pdo->prepare($sql);
+            $stmt - ›execute(['id' => $id]);
+            return $stmt->query($sql)->fetch();
+
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+        return null;
+    }
+
     function getAllStudentWhereFirstNameContainsA(): ?array
     {
         try {
